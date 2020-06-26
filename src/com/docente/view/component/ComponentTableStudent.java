@@ -21,6 +21,7 @@ import javax.swing.table.AbstractTableModel;
  * @author DonTulio
  */
 public class ComponentTableStudent extends AbstractTableModel {
+    
     private List<Student> students;
     private String[] columns;
     

@@ -16,12 +16,17 @@ import com.mysql.cj.x.protobuf.MysqlxPrepare;
  * @author DonTulio
  */
 public class ConnectionDB implements ImplementationConnectionDB{
+    
     private static ConnectionDB connectionDB;
+    
     private Connection connection;
+    
     private static List<Connection> pools;
+    
     private ConnectionDB(){
         
     }
+    
     
     public static ConnectionDB newInstance(){
         if(connectionDB == null){
@@ -51,8 +56,8 @@ public class ConnectionDB implements ImplementationConnectionDB{
             throw  new Exception("La operación deberá esperar");
         }
         return this.getNewConnection();
-        
     }
+    
     @Deprecated
     public void closeConnection() {
         try{

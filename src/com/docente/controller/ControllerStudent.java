@@ -47,6 +47,7 @@ public class ControllerStudent implements ImplementationStudent{
             con = this.openConnection();
             PreparedStatement pstm = con
                     .prepareStatement("INSERT INTO mark (idSection,rutStudent,mark) values(?,?,?)");
+            
             for(Student student: students){
                 pstm.setInt(1, sectionId);
                 pstm.setString(2, String.format("%s%s",student.getRut(),student.getDv()));

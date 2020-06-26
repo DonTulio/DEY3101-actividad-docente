@@ -26,7 +26,7 @@ public class Helper {
     }
     
     public static int generateRut(){
-        return new Random().nextInt(MIN - MAX) + MIN;
+        return new Random().nextInt(MAX-MIN) + MIN;
     }
     
     public static char generateDV(int rut){
@@ -67,6 +67,7 @@ public class Helper {
         int random = new Random().nextInt(25-15)+15;
         
         for(int pivote = 0; pivote<=random; pivote++){
+            
             int rut = generateRut();
             while(isExistRutInList(rut,students)==true){
                 rut = generateRut();

@@ -93,7 +93,6 @@ public class ControllerSection implements ImplementationSection{
             con = this.openConnection();
             PreparedStatement pstm = con
                     .prepareStatement("UPDATE section SET sectionName = ?  WHERE sectionId = ?");
-            
             pstm.setString(1, elemento.getSectionName());
             pstm.setInt(2, elemento.getSectionId());
             temp = pstm.executeUpdate();
@@ -173,9 +172,12 @@ public class ControllerSection implements ImplementationSection{
         Connection con = null;
         try {
             con = this.openConnection();
+            
             PreparedStatement pstm = con
                     .prepareStatement("SELECT idSection,nameSection,status FROM section");
+            
             ResultSet rs = pstm.executeQuery();
+            
             while(rs.next()){
                 List<Student> studentTemp = ControllerStudent.newInstance().getElements(rs.getInt(1));
                 Section section = new Section(rs.getInt(1),
